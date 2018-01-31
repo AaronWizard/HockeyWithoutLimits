@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sound/score.wav" type="AudioStream" id=1]
 
 [sub_resource type="Gradient" id=2]
 
@@ -51,7 +53,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Flags", "Scale", "Trail" ]
 
-[node name="puck_burst" type="Particles2D"]
+[node name="puck_burst" type="Particles2D" index="0"]
 
 emitting = false
 amount = 128
@@ -72,5 +74,15 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Time" ]
+
+[node name="score_sound" type="AudioStreamPlayer2D" parent="." index="0"]
+
+stream = ExtResource( 1 )
+volume_db = 0.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

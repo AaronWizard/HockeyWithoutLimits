@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miss.wav-722b1a5ee4013914a3ccdcdd57bc992d.sample"
+
+[deps]
+
+source_file="res://sound/miss.wav"
+source_md5="6845510cba751953a1a1aab39f8a73b7"
+
+dest_files=[ "res://.import/miss.wav-722b1a5ee4013914a3ccdcdd57bc992d.sample" ]
+dest_md5="f56917e5f09b312c190ab1796f7cea78"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

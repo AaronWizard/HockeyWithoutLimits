@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stick_hit.wav-7e41228878c7edfd27548d4ccf222f8c.sample"
+
+[deps]
+
+source_file="res://sound/stick_hit.wav"
+source_md5="30a3530c6e99ad5f305b1fd914966725"
+
+dest_files=[ "res://.import/stick_hit.wav-7e41228878c7edfd27548d4ccf222f8c.sample" ]
+dest_md5="04fb1bde9c610139571f66ddddd1ce8f"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

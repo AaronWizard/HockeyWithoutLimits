@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/puck_spawn.wav-b3088d6af5cd3afaf4e53e617a0e577e.sample"
+
+[deps]
+
+source_file="res://sound/puck_spawn.wav"
+source_md5="4f019e601d6ac2f94ec917697f102a2e"
+
+dest_files=[ "res://.import/puck_spawn.wav-b3088d6af5cd3afaf4e53e617a0e577e.sample" ]
+dest_md5="f7926e6ec7f530aaafcaf233b5a08e94"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

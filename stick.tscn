@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://stick.gd" type="Script" id=1]
 [ext_resource path="res://art/stick.png" type="Texture" id=2]
+[ext_resource path="res://sound/stick_hit.wav" type="AudioStream" id=3]
+[ext_resource path="res://sound/miss.wav" type="AudioStream" id=4]
 
 [sub_resource type="Gradient" id=1]
 
@@ -135,6 +137,30 @@ blend_times = [  ]
 build_mode = 0
 polygon = PoolVector2Array( -16, 12, -9, -12, 16, -12, 23, 12 )
 
+[node name="hit_sound" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="miss_sound" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 [connection signal="timeout" from="particle_timer" to="." method="_on_particle_timer_timeout"]
+
+[connection signal="finished" from="hit_sound" to="." method="_on_hit_sound_finished"]
+
+[connection signal="finished" from="miss_sound" to="." method="_on_miss_sound_finished"]
 
 

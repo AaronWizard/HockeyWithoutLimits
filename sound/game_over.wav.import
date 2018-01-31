@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/game_over.wav-6cd4c116a462c3057e2840c9d3e5689f.sample"
+
+[deps]
+
+source_file="res://sound/game_over.wav"
+source_md5="7d233a88ddb515f294ee35e4f84e7837"
+
+dest_files=[ "res://.import/game_over.wav-6cd4c116a462c3057e2840c9d3e5689f.sample" ]
+dest_md5="84f6b699a6890fcb0cc0f8c1b31317d0"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

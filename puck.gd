@@ -17,6 +17,15 @@ func _physics_process(delta):
 		while collision:
 			if collision.collider is preload("res://stick.gd"):
 				collision.collider.do_bump()
+
+			$hit_sound.playing = true
+
 			velocity = velocity.bounce(collision.normal)
 			rel_vec = collision.remainder.bounce(collision.normal)
 			collision = move_and_collide(rel_vec)
+
+func _on_spawn_sound_finished():
+	$spawn_sound.playing = false
+
+func _on_hit_sound_finished():
+	$hit_sound.playing = false
