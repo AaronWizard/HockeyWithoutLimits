@@ -6,3 +6,7 @@ AaronWizard
 A game of hockey.  
 Hit the puck into the net.  
 But watch out, as this is *hockey without limits.*
+
+## External resources
+
+**Rationale** font by Cyreal

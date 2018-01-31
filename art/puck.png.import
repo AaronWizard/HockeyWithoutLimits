@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/puck.png-f8a0753e0a6bba2e989a02544b6d6083.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="229962ca9b75382c6aadb2986c8aeb2c"
+source_file="res://art/puck.png"
+source_md5="855a8871e789448f9b82b5a6a2f8adfb"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="be6d7a6a1eba6aa33aeb18ad8f415074"
+dest_files=[ "res://.import/puck.png-f8a0753e0a6bba2e989a02544b6d6083.stex" ]
+dest_md5="c08f475b05b6111cf572a42833ff492a"
 
 [params]
 
