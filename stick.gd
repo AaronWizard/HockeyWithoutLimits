@@ -6,9 +6,6 @@ func _ready():
 	$hit_particles.emitting = false
 	$particle_timer.wait_time = $hit_particles.lifetime
 
-func _process(delta):
-	pass
-
 func _physics_process(delta):
 	var velocity = Vector2()
 	if Input.is_action_pressed("move_left"):

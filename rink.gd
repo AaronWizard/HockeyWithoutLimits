@@ -22,6 +22,8 @@ var _health
 func _ready():
 	randomize()
 
+	$gui/pause_overlay.visible = false
+
 	_health = max_health
 	$gui/health.max_value = max_health
 	$gui/health.value = _health
@@ -32,13 +34,26 @@ func _ready():
 	$gui/gameover_path.visible = false
 
 func _input(event):
-	var is_cancel = InputMap.event_is_action(event, "cancel")
-	var is_game_over = (_health == 0) \
-			and not $gui/AnimationPlayer.is_playing() \
-			and (event is InputEventKey)
+	if not $gui/AnimationPlayer.is_playing() and (event is InputEventKey) \
+			and event.pressed:
+		var game_over = _health == 0
+		var do_pause = event.is_action_pressed("cancel") \
+				and not $gui/pause_overlay.visible
 
-	if is_cancel or is_game_over:
-		get_tree().change_scene_to(load("res://title.tscn"))
+		if game_over:
+			get_tree().set_input_as_handled()
+			get_tree().change_scene_to(load("res://title.tscn"))
+		elif do_pause:
+			get_tree().set_input_as_handled()
+			_pause_game()
+
+func _notification(what):
+	if (what == MainLoop.NOTIFICATION_WM_FOCUS_OUT) and (_health > 0):
+		_pause_game()
+
+func _pause_game():
+	$gui/pause_overlay.visible = true
+	get_tree().paused = true
 
 func _on_puck_spawn_timer_timeout():
 	_launch_puck()
