@@ -428,7 +428,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="key_to_continue2" type="Label" parent="gui/pause_overlay/VBoxContainer" index="1"]
+[node name="key_to_continue" type="Label" parent="gui/pause_overlay/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -445,7 +445,7 @@ size_flags_vertical = 4
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 1, 1, 1 )
-text = "Press Escape to quit
+text = "Press %s to quit
 Press any other key to continue"
 align = 1
 percent_visible = 1.0

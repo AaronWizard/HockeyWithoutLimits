@@ -41,10 +41,8 @@ func _input(event):
 				and not $gui/pause_overlay.visible
 
 		if game_over:
-			get_tree().set_input_as_handled()
 			get_tree().change_scene_to(load("res://title.tscn"))
 		elif do_pause:
-			get_tree().set_input_as_handled()
 			_pause_game()
 
 func _notification(what):
