@@ -61,7 +61,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=9]
 
 size = 16
 use_mipmaps = false
@@ -69,7 +69,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
 length = 0.75
 loop = false
@@ -341,7 +341,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 1, 1, 1 )
 text = "Press any key to continue"
@@ -358,7 +358,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/game over" = SubResource( 9 )
+"anims/game over" = SubResource( 10 )
 blend_times = [  ]
 
 [connection signal="timeout" from="puck_spawn_timer" to="." method="_on_puck_spawn_timer_timeout"]
