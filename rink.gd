@@ -32,7 +32,12 @@ func _ready():
 	$gui/gameover_path.visible = false
 
 func _input(event):
-	if (_health == 0) and not $gui/AnimationPlayer.is_playing() and (event is InputEventKey):
+	var is_cancel = InputMap.event_is_action(event, "cancel")
+	var is_game_over = (_health == 0) \
+			and not $gui/AnimationPlayer.is_playing() \
+			and (event is InputEventKey)
+
+	if is_cancel or is_game_over:
 		get_tree().change_scene_to(load("res://title.tscn"))
 
 func _on_puck_spawn_timer_timeout():
