@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://rink.gd" type="Script" id=1]
 [ext_resource path="res://art/rink.png" type="Texture" id=2]
@@ -55,17 +55,25 @@ _data = {
 
 [sub_resource type="DynamicFont" id=8]
 
-size = 16
+size = 48
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="DynamicFont" id=10]
+
+size = 16
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 7 )
+_sections_unfolded = [ "Settings" ]
+
 [sub_resource type="Animation" id=9]
 
-length = 1.5
+length = 0.75
 loop = false
-step = 0.25
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("gameover_path/gameover_follow:unit_offset")
 tracks/0/interp = 2
@@ -73,22 +81,34 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.75, 1.5 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("gameover_path/gameover_follow/game over:custom_fonts/font:size")
-tracks/1/interp = 2
+tracks/1/path = NodePath("gameover_path/gameover_follow/Node2D:scale")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.75, 1.5 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 16, 48 ]
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("gameover_path/gameover_follow/Node2D/VBoxContainer/key_to_continue:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="rink" type="Node" index="0"]
@@ -250,14 +270,13 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures" ]
 
 [node name="gameover_path" type="Path2D" parent="gui" index="1"]
 
-visible = false
 curve = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="gameover_follow" type="PathFollow2D" parent="gui/gameover_path" index="0"]
 
-position = Vector2( -25, -22 )
-offset = 0.0
+position = Vector2( 42, 55 )
+offset = 102.125
 h_offset = 0.0
 v_offset = 0.0
 rotate = false
@@ -266,7 +285,26 @@ loop = false
 lookahead = 4.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="game over" type="Label" parent="gui/gameover_path/gameover_follow" index="0"]
+[node name="Node2D" type="Node2D" parent="gui/gameover_path/gameover_follow" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="gui/gameover_path/gameover_follow/Node2D" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 184.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="game over" type="Label" parent="gui/gameover_path/gameover_follow/Node2D/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -283,10 +321,35 @@ custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0, 0.333333, 1 )
 custom_colors/font_color_shadow = Color( 0.666667, 0, 0.333333, 1 )
 text = "Game Over"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility" ]
+
+[node name="key_to_continue" type="Label" parent="gui/gameover_path/gameover_follow/Node2D/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 60.0
+margin_right = 184.0
+margin_bottom = 79.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 1, 1, 1 )
+text = "Press any key to continue"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="gui" index="2"]
 

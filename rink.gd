@@ -31,6 +31,10 @@ func _ready():
 
 	$gui/gameover_path.visible = false
 
+func _input(event):
+	if (_health == 0) and not $gui/AnimationPlayer.is_playing() and (event is InputEventKey):
+		get_tree().change_scene_to(load("res://title.tscn"))
+
 func _on_puck_spawn_timer_timeout():
 	_launch_puck()
 
