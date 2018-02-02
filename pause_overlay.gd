@@ -17,6 +17,5 @@ func _input(event):
 			get_tree().paused = false
 			get_tree().change_scene_to(load("res://title.tscn"))
 		else:
-			print("resume")
 			get_tree().paused = false
 			visible = false
