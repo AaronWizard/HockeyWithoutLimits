@@ -7,6 +7,8 @@ A game of hockey.
 Hit the puck into the net.  
 But watch out, as this is *hockey without limits.*
 
-## External resources
+## Tools and resources
+
+Made using the Godot game engine.
 
 **Rationale** font by Cyreal
